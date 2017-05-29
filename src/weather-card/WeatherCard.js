@@ -1,7 +1,9 @@
 import React from 'react';
 
 export default function WeatherCard(props) {
-    if(!props.model) return null;
+    if(!props.model) return (
+        <div className="alert alert-success" role="alert">Consulte uma cidade.</div>
+    );
     let images = props.model.weather.map((weather, i) => {
         return <img key={i} src={`http://openweathermap.org/img/w/${weather.icon}.png`} alt=""/>
     });
@@ -22,7 +24,7 @@ export default function WeatherCard(props) {
                 <div className="row">
                     <div className="col-sm-12 col-md-4 col-lg-4">
                         <span>Tempretatura: </span>
-                        <label>{props.model.main.temp + '°'}</label>
+                        <label>{`${props.model.main.temp}°`}</label>
                     </div>
                     <div className="col-sm-12 col-md-4 col-lg-4">
                         <span>Minima: </span>

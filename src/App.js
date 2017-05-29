@@ -29,6 +29,7 @@ class App extends Component {
         <div className="row">
           <div className="col-sm-6 col-md-6 col-lg-6 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
             <Search value={this.state.value} handleChange={(e) => this.handleChange(e)} onClickSearch={() => this.onClickSearch()}/>
+            <hr/>
             <WeatherCard model={this.state.model} />
           </div>
         </div>
