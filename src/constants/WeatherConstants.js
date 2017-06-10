@@ -1,0 +1,5 @@
+export default {
+    ADD: 'ADD_WEATHER',
+    SHOW: 'SHOW_WEATHER',
+    UPDATE_FILTER: 'UPDATE_FILTER'
+}

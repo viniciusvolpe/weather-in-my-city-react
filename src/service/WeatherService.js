@@ -1,4 +1,5 @@
 import axios from 'axios';
+import WeatherActionCreator from '../action-creators/WeatherActionCreator'
 export default class WeatherService {
     constructor(){
         axios.defaults.baseURL = 'http://api.openweathermap.org/data/2.5';
@@ -10,7 +11,12 @@ export default class WeatherService {
     }
 
     get(city){
-        this.params.q = city;
-        return axios.get('/weather', {params: this.params});
+        return dispatch => {
+            this.params.q = city;
+            axios.get('/weather', {params: this.params})
+            .then(
+                response => dispatch(WeatherActionCreator.addAction(response.data))
+            );
+        }
     }
 }

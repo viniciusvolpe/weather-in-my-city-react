@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function WeatherCard(props) {
+const WeatherCard = (props) => {
     if(!props.model) return (
         <div className="alert alert-success" role="alert">Consulte uma cidade.</div>
     );
@@ -53,3 +53,5 @@ export default function WeatherCard(props) {
         </div>
     );
 }
+
+export default WeatherCard;
